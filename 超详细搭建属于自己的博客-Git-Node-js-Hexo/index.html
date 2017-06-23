@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://happywayq.com/超详细搭建属于自己的博客-Git-Node-js-Hexo/index.html">
 <meta property="og:site_name" content="叫我范小晴">
 <meta property="og:description" content="前言 我一直有记笔记的习惯，方便自己需要的时候回头看看，主要自己现在还是个菜鸟，需要经常的回顾知识。我在CSDN也有账号，也写过博客，但是界面不友好，就没太大兴趣继续写了，一个偶然的机会，看见别人的博客主页面很好，很清晰。于是乎也想着自己搭建一个自己的博客，创造属于自己的分享天地。Ok，就这样开启了搭建博客之路，在这里我把经验分享给大家，希望大家也多多分享知识，IT行业需要多多交流，不可闭门造车。">
-<meta property="og:updated_time" content="2017-05-26T08:31:46.698Z">
+<meta property="og:updated_time" content="2017-06-23T13:32:34.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="超详细搭建属于自己的博客-Git+Node.js+Hexo">
 <meta name="twitter:description" content="前言 我一直有记笔记的习惯，方便自己需要的时候回头看看，主要自己现在还是个菜鸟，需要经常的回顾知识。我在CSDN也有账号，也写过博客，但是界面不友好，就没太大兴趣继续写了，一个偶然的机会，看见别人的博客主页面很好，很清晰。于是乎也想着自己搭建一个自己的博客，创造属于自己的分享天地。Ok，就这样开启了搭建博客之路，在这里我把经验分享给大家，希望大家也多多分享知识，IT行业需要多多交流，不可闭门造车。">
@@ -414,7 +414,33 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo new post &apos;XXX&apos;</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
 <p>Ok ,如果在此过程中没有出现错误，那我们的博客上传到github上面就全部完成，以后每次部署只需要 hexo clean   hexo g   hexo  d 就可以了。</p>
 <h3 id="出现的问题以及解决办法"><a href="#出现的问题以及解决办法" class="headerlink" title="出现的问题以及解决办法"></a>出现的问题以及解决办法</h3><p>1.ERROR Deployer not found: git 或者 ERROR Deployer not found: github</p>
-<p>解决：在cmd切换到博客主目录执行：npm install hexo-deployer-git –save</p>
+<p>解决：在cmd切换到博客主目录执行：npm install hexo-deployer-git - -save</p>
+<p>记住这个save前面是两个 -</p>
+<ul>
+<li>如果执行完这个命令还是出现如下错误：</li>
+</ul>
+<p>Error: fatal: Not a git repository (or any of the parent directories): .git</p>
+<pre><code>at ChildProcess.&lt;anonymous&gt; (E:\myBlog\node_modules\hexo-util\lib\spawn.js:37:17)
+at emitTwo (events.js:106:13)
+at ChildProcess.emit (events.js:191:7)
+at ChildProcess.cp.emit (E:\myBlog\node_modules\cross-spawn\lib\enoent.js:40:29)
+at maybeClose (internal/child_process.js:886:16)
+at Socket.&lt;anonymous&gt; (internal/child_process.js:342:11)
+at emitOne (events.js:96:13)
+at Socket.emit (events.js:188:7)
+at Pipe._handle.close [as _onclose] (net.js:497:12)
+</code></pre><p>FATAL fatal: Not a git repository (or any of the parent directories): .git</p>
+<p>Error: fatal: Not a git repository (or any of the parent directories): .git</p>
+<pre><code>at ChildProcess.&lt;anonymous&gt; (E:\myBlog\node_modules\hexo-util\lib\spawn.js:37:17)
+at emitTwo (events.js:106:13)
+at ChildProcess.emit (events.js:191:7)
+at ChildProcess.cp.emit (E:\myBlog\node_modules\cross-spawn\lib\enoent.js:40:29)
+at maybeClose (internal/child_process.js:886:16)
+at Socket.&lt;anonymous&gt; (internal/child_process.js:342:11)
+at emitOne (events.js:96:13)
+at Socket.emit (events.js:188:7)
+at Pipe._handle.close [as _onclose] (net.js:497:12)
+</code></pre><p>记住删除站点文件夹下面的.deploy.git重新hexo d 就好了。</p>
 <p>2.执行hexo d 的时候，一直出现提示you have to configure the depoment settings in _config.yml firtst!</p>
 <p>解决：在站点配置文件里面配置deploy的时候：repo: git@github.com:happyfyq/happyfyq.github.io.git 这里的repo我一开始写成ssh了，改成repo就好了！</p>
 <p>3.在修改配置文件_config.yml的时候，冒号后面一定要有空格，否则会出错，很多人都犯了这个错误。</p>
