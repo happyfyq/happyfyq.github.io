@@ -1,0 +1,1006 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="GoDaddy GitHub," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言 在搭建成功自己的博客之后，就迫不及待的把自己的经验写下来，供大家分享使用。然后大家在看的时候难免有些小疑问，这时候还要在去搜其他的文章，Damiss本着帮人帮到底的原则，就给自己的博客添加了评论功能，这样广大博友在看的时候，有疑问或者有意见可直接在评论里面给DaMiss留言，我看到后会及时回复大家。废话不多说，接下来DaMiss就把怎么在自己的博客中添加评论的经验分享给大家。  踩坑:我在注">
+<meta name="keywords" content="GoDaddy GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo之NexT主题优化（2）-添加评论">
+<meta property="og:url" content="http://happywayq.com/Hexo之NexT主题优化-添加评论/index.html">
+<meta property="og:site_name" content="叫我DaMiss">
+<meta property="og:description" content="前言 在搭建成功自己的博客之后，就迫不及待的把自己的经验写下来，供大家分享使用。然后大家在看的时候难免有些小疑问，这时候还要在去搜其他的文章，Damiss本着帮人帮到底的原则，就给自己的博客添加了评论功能，这样广大博友在看的时候，有疑问或者有意见可直接在评论里面给DaMiss留言，我看到后会及时回复大家。废话不多说，接下来DaMiss就把怎么在自己的博客中添加评论的经验分享给大家。  踩坑:我在注">
+<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/gd1.png">
+<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/gd2.png">
+<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/gd3.png">
+<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/gd4.png">
+<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/gt.png">
+<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/gt1.png">
+<meta property="og:updated_time" content="2017-05-26T08:16:07.980Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo之NexT主题优化（2）-添加评论">
+<meta name="twitter:description" content="前言 在搭建成功自己的博客之后，就迫不及待的把自己的经验写下来，供大家分享使用。然后大家在看的时候难免有些小疑问，这时候还要在去搜其他的文章，Damiss本着帮人帮到底的原则，就给自己的博客添加了评论功能，这样广大博友在看的时候，有疑问或者有意见可直接在评论里面给DaMiss留言，我看到后会及时回复大家。废话不多说，接下来DaMiss就把怎么在自己的博客中添加评论的经验分享给大家。  踩坑:我在注">
+<meta name="twitter:image" content="http://oqhkn28th.bkt.clouddn.com/gd1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://happywayq.com/Hexo之NexT主题优化-添加评论/"/>
+
+
+
+
+  <title>Hexo之NexT主题优化（2）-添加评论 | 叫我DaMiss</title>
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">叫我DaMiss</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不负韶华</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://happywayq.com/Hexo之NexT主题优化-添加评论/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="happyfyq">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="叫我DaMiss">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo之NexT主题优化（2）-添加评论</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-24T13:55:00+08:00">
+                2017-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+			  
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
+                    <span itemprop="name">搭建博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/Hexo之NexT主题优化-添加评论/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/Hexo之NexT主题优化-添加评论/" class="leancloud_visitors" data-flag-title="Hexo之NexT主题优化（2）-添加评论">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>前言</em></p>
+<p>在搭建成功自己的博客之后，就迫不及待的把自己的经验写下来，供大家分享使用。然后大家在看的时候难免有些小疑问，这时候还要在去搜其他的文章，Damiss本着帮人帮到底的原则，就给自己的博客添加了评论功能，这样广大博友在看的时候，有疑问或者有意见可直接在评论里面给DaMiss留言，我看到后会及时回复大家。废话不多说，接下来DaMiss就把怎么在自己的博客中添加评论的经验分享给大家。</p>
+<hr>
+<p><strong>踩坑</strong>:我在注册完成网易云跟帖之后，开始保存自己的基本信息和站长信息的时候，一直提示我的站点名称或者站点url已经存在，死活保存不了，这个让我很苦恼，几经折腾我找到了网易云跟帖的技术支撑QQ群:538146343,在这里我找到了原因，因为我的博客是托管在github上，自动分配的域名happyfyq.github.io是一个二级域名，并且网易云跟帖不支持这个github自动分配的域名，他们建议要买一个一级域名，于是乎Damiss就开始去买域名，然后在注册跟帖，然后添加评论。</p>
+<h3 id="购买域名并解析"><a href="#购买域名并解析" class="headerlink" title="购买域名并解析"></a>购买域名并解析</h3><p>我是在<a href="https://dcc.godaddy.com" target="_blank" rel="external">https://dcc.godaddy.com</a> 上买的域名，不贵，大家都买的起，哈哈。买好域名就需要解析域名，解析的意思就是你的这个域名要绑定到那个网址上，然后访问这个域名就等同于访问这个网址，我的博客是托管在github上的，肯定是将域名解析到我的github pages上。</p>
+<p>1.打开你的站点目录文件下的source文件，比如：E:\myBlog\source</p>
+<p>2.在这个source文件夹下面建一个名为CNAME的文件，注意是大写，并且没有后缀，内容就是你刚在在狗爹申请的域名。</p>
+<p>2.回到狗爹的主页，我的产品：</p>
+<p><img src="http://oqhkn28th.bkt.clouddn.com/gd1.png" alt=""></p>
+<p>3.点击域名链接<img src="http://oqhkn28th.bkt.clouddn.com/gd2.png" alt=""></p>
+<p>4.向下拉找到：</p>
+<p><img src="http://oqhkn28th.bkt.clouddn.com/gd3.png" alt=""></p>
+<p>5.新添加Record和一条CNAME Record.具体如图所示：</p>
+<p><img src="http://oqhkn28th.bkt.clouddn.com/gd4.png" alt="image"></p>
+<p>到此，我们的域名申请好了，也解析好了。等待一分钟之后你就可以访问 你申请的域名了，比如DaMiss的是happywayq.com 打开之后显示的和happyfyq.github.io以前显示的一样。</p>
+<h3 id="申请网易云跟帖然后进行填写信息"><a href="#申请网易云跟帖然后进行填写信息" class="headerlink" title="申请网易云跟帖然后进行填写信息"></a>申请网易云跟帖然后进行填写信息</h3><p>1.基本信息中的站点网址就是我们刚才在狗爹申请的域名。</p>
+<p><img src="http://oqhkn28th.bkt.clouddn.com/gt.png" alt=""></p>
+<p>2.保存完成之后，复制里面的productKey：</p>
+<p><img src="http://oqhkn28th.bkt.clouddn.com/gt1.png" alt=""></p>
+<h3 id="配置评论"><a href="#配置评论" class="headerlink" title="配置评论"></a>配置评论</h3><p>打开主题配置文件，找到 Gentie productKey，修改为以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Gentie productKey</div><div class="line">gentie_productKey: &apos;填写你刚才复制的key&apos;</div></pre></td></tr></table></figure>
+<hr>
+<p>OK，大功告成，如有疑问，请在评论处留言。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://oqhkn28th.bkt.clouddn.com/shoukuan2%20%281%29.JPG" alt="happyfyq WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://oqhkn28th.bkt.clouddn.com/shoukuan2%20%282%29.JPG" alt="happyfyq Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	
+	<div>
+  
+    ﻿
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
+<br/>
+<div style="border: 1px solid black">
+<div style="margin-left:10px">
+<span style="font-weight:blod">版权声明</span>
+<br/>
+<p style="font-size: 10px;line-height: 30px"><a href="http://happywayq.com" style="color:#258FC6">happywayq's Notes</a> by <a href="http://happywayq.com" style="color:#258FC6">Fan yiqing</a> is licensed under a <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:#258FC6">Creative Commons BY-NC-ND 4.0 International License</a>.<br/>
+由<a href="http://happywayq.com" style="color:#258FC6">DaMiss</a>创作并维护的<a href="http://happywayq.com" style="color:#258FC6">happywayq's Notes</a>博客采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:#258FC6">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>。<br/>
+本文首发于<a href="http://happywayq.com" style="color:#258FC6">happywayq's Notes</a> 博客（ <a href="http://happywayq.com" style="color:#258FC6">http://happywayq.com</a> ），版权所有，侵权必究。</p>
+</div>
+</div>
+
+  
+</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GoDaddy-GitHub/" rel="tag"># GoDaddy GitHub</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Hexo之NexT主题优化-修改默认/" rel="next" title="Hexo之NexT主题优化（1）-修改默认">
+                <i class="fa fa-chevron-left"></i> Hexo之NexT主题优化（1）-修改默认
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Hexo之NexT主题优化-添加分享/" rel="prev" title="Hexo之NexT主题优化（3）-添加分享">
+                Hexo之NexT主题优化（3）-添加分享 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        ﻿ <!--MOB SHARE BEGIN-->
+                                <div class="-mob-share-ui-button -mob-share-open">分享</div>
+                                <div class="-mob-share-ui" style="display: none">
+                                    <ul class="-mob-share-list">
+                                        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+                                        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+                                        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+                                        <li class="-mob-share-qq"><p>QQ好友</p></li>
+                                        <li class="-mob-share-weixin"><p>微信</p></li>
+                                        <li class="-mob-share-douban"><p>豆瓣</p></li>
+                                        <li class="-mob-share-renren"><p>人人网</p></li>
+                                        <li class="-mob-share-kaixin"><p>开心网</p></li>
+                                        <li class="-mob-share-facebook"><p>Facebook</p></li>
+                                        <li class="-mob-share-twitter"><p>Twitter</p></li>
+                                        <li class="-mob-share-pocket"><p>Pocket</p></li>
+                                        <li class="-mob-share-google"><p>Google+</p></li>
+                                        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
+                                        <li class="-mob-share-mingdao"><p>明道</p></li>
+                                        <li class="-mob-share-pengyou"><p>朋友网</p></li>
+                                        <li class="-mob-share-tumblr"><p>Tumblr</p></li>
+                                        <li class="-mob-share-instapaper"><p>Instapaper</p></li>
+                                        <li class="-mob-share-linkedin"><p>LinkedIn</p></li>
+                                    </ul>
+                                    <div class="-mob-share-close">取消</div>
+                                </div>
+                                <div class="-mob-share-ui-bg"></div>
+                                <script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=1e2ae830798b2"></script>
+                                <!--MOB SHARE END-->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="happyfyq" />
+          <p class="site-author-name" itemprop="name">happyfyq</p>
+           
+              <p class="site-description motion-element" itemprop="description">得智体美全面发展的小红帽</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/happyfyq" target="_blank" title="gitHub">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  gitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="xujin.org" title="许进|沉思录" target="_blank">许进|沉思录</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jinnianshilongnian.iteye.com" title="开涛" target="_blank">开涛</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://itmuch.com" title="周立|spring cloud" target="_blank">周立|spring cloud</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://springcloud.cn/" title="Spring Cloud中国社区" target="_blank">Spring Cloud中国社区</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.springcloud.cn/" title="Spring Cloud中国社区博客" target="_blank">Spring Cloud中国社区博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#购买域名并解析"><span class="nav-number">1.</span> <span class="nav-text">购买域名并解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#申请网易云跟帖然后进行填写信息"><span class="nav-number">2.</span> <span class="nav-text">申请网易云跟帖然后进行填写信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置评论"><span class="nav-number">3.</span> <span class="nav-text">配置评论</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">happyfyq</span>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "a8e8ecc632e844cfb0535c9e662175e8",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("INQ1hCliOzTuykWxkmY4nekL-gzGzoHsz", "AShinAMawWkwQpFF0laHsEhk");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a href="https://github.com/happyfyq"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+  
+</body>
+</html>
