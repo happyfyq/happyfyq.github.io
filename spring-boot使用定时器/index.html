@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://happywayq.com/spring-boot使用定时器/index.html">
 <meta property="og:site_name" content="叫我DaMiss">
 <meta property="og:description" content="1.准备条件首先我们需要搭建好一个springBoot，我是的使用Maven管理的。。由于最近要做定时器的任务，以前在普通spring web工程写过，但是要写配置文件，现在用springBoot肯定是要用注解的了，不然不浪费了SpringBoot带来的便利了吗，哈哈，废话不多说。。开整 2.第一种方式：通过springboot自带入口来开启定时器。springBoot有自己的入口类：@Sprin">
-<meta property="og:updated_time" content="2017-07-13T08:32:55.157Z">
+<meta property="og:updated_time" content="2017-07-14T01:38:29.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring boot使用定时器">
 <meta name="twitter:description" content="1.准备条件首先我们需要搭建好一个springBoot，我是的使用Maven管理的。。由于最近要做定时器的任务，以前在普通spring web工程写过，但是要写配置文件，现在用springBoot肯定是要用注解的了，不然不浪费了SpringBoot带来的便利了吗，哈哈，废话不多说。。开整 2.第一种方式：通过springboot自带入口来开启定时器。springBoot有自己的入口类：@Sprin">
@@ -374,7 +374,69 @@
 <p>另外给大家mark一个小技巧。如果一般来说忘记了某个注解里面的key的名字的话。不一定要急着去百度。可以按住ctrl点进去看一下里面的方法名字即可，例如我忘记了@Scheduled中的cron是怎么拼写了。我可以点进去查看</p>
 <hr>
 <p>下面奉献出cron表达式一些用方法：</p>
-<p>星号(<em>)：可用在所有字段中，表示对应时间域的每一个时刻，例如，</em>在分钟字段时，表示“每分钟”；</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th></th>
+<th>允许值</th>
+<th></th>
+<th>允许的特殊字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>秒</code></td>
+<td></td>
+<td><code>0-59</code></td>
+<td></td>
+<td><code>, - * /</code></td>
+</tr>
+<tr>
+<td><code>分</code></td>
+<td></td>
+<td><code>0-59</code></td>
+<td></td>
+<td><code>, - * /</code></td>
+</tr>
+<tr>
+<td><code>小时</code></td>
+<td></td>
+<td><code>0-23</code></td>
+<td></td>
+<td><code>, - * /</code></td>
+</tr>
+<tr>
+<td><code>日期</code></td>
+<td></td>
+<td><code>1-31</code></td>
+<td></td>
+<td><code>, - *   / L W C</code></td>
+</tr>
+<tr>
+<td><code>月份</code></td>
+<td></td>
+<td><code>1-12 或者 JAN-DEC</code></td>
+<td></td>
+<td><code>, - * /</code></td>
+</tr>
+<tr>
+<td><code>星期</code></td>
+<td></td>
+<td><code>1-7 或者 SUN-SAT</code></td>
+<td></td>
+<td><code>, - *   / L C #</code></td>
+</tr>
+<tr>
+<td><code>年（可选）</code></td>
+<td></td>
+<td><code>留空, 1970-2099</code></td>
+<td></td>
+<td><code>, - * /</code></td>
+</tr>
+</tbody>
+</table>
+<p>● 星号可用在所有字段中，表示对应时间域的每一个时刻，例如，*在分钟字段时，表示“每分钟”；</p>
 <p>●问号（?）：该字符只在日期和星期字段中使用，它通常指定为“无意义的值”，相当于点位符；</p>
 <p>●减号(-)：表达一个范围，如在小时字段中使用“10-12”，则表示从10到12点，即10,11,12；</p>
 <p>●逗号(,)：表达一个列表值，如在星期字段中使用“MON,WED,FRI”，则表示星期一，星期三和星期五；</p>
@@ -444,24 +506,6 @@
       
     </div>
 	
-	<div>
-  
-    ﻿
-<div style="text-align:center;color: #ccc;font-size:14px;">
------- 本文结束 ------</div>
-<br/>
-<div style="border: 1px solid black">
-<div style="margin-left:10px">
-<span style="font-weight:blod">版权声明</span>
-<br/>
-<p style="font-size: 10px;line-height: 30px"><a href="http://happywayq.com" style="color:#258FC6">happywayq's Notes</a> by <a href="http://happywayq.com" style="color:#258FC6">Fan yiqing</a> is licensed under a <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:#258FC6">Creative Commons BY-NC-ND 4.0 International License</a>.<br/>
-由<a href="http://happywayq.com" style="color:#258FC6">DaMiss</a>创作并维护的<a href="http://happywayq.com" style="color:#258FC6">happywayq's Notes</a>博客采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:#258FC6">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>。<br/>
-本文首发于<a href="http://happywayq.com" style="color:#258FC6">happywayq's Notes</a> 博客（ <a href="http://happywayq.com" style="color:#258FC6">http://happywayq.com</a> ），版权所有，侵权必究。</p>
-</div>
-</div>
-
-  
-</div>
 
     <footer class="post-footer">
       
