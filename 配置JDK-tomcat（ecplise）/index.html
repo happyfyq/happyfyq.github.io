@@ -98,7 +98,11 @@
 <meta property="og:site_name" content="叫我DaMiss">
 <meta property="og:description" content="1.JDK配置下载jdk，双击安装，安装的路径是全英文路径  右击计算机-属性-高级系统设置-高级-环境变量，弹出“环境变量”对话框，主要是改下面的环境变量，不是上面的Administrator。（不然其他用户还得自己配） 添加JAVA_HOME指明JDK安装路径,如C:\Program Files\Java\jdk1.7.0,此路径下包括lib，bin，jre等文件夹   在Path变量中添加：">
 <meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/I97EOJVW$T@ZLCOC2Z%29E%7DU3.png">
-<meta property="og:updated_time" content="2017-09-13T03:45:11.426Z">
+<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/8LVDQUFUDHD5K_XA039%28ICB.png">
+<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/22YW6W34%7DKP_3%7BMB8%253EU%5DB.png">
+<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/S%5B7K2RI%7B%5BJHR7@5%7B%5DU%5D%28W6Y.png">
+<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/ODXUZJB367$@_0~I%5DU%25IG%286.png">
+<meta property="og:updated_time" content="2017-09-13T05:39:47.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置JDK+tomcat（ecplise）">
 <meta name="twitter:description" content="1.JDK配置下载jdk，双击安装，安装的路径是全英文路径  右击计算机-属性-高级系统设置-高级-环境变量，弹出“环境变量”对话框，主要是改下面的环境变量，不是上面的Administrator。（不然其他用户还得自己配） 添加JAVA_HOME指明JDK安装路径,如C:\Program Files\Java\jdk1.7.0,此路径下包括lib，bin，jre等文件夹   在Path变量中添加：">
@@ -386,6 +390,38 @@
 <p>2，打开PATH，添加变量值：%CATALINA_HOME%\lib;%CATALINA_HOME%\bin</p>
 <p>测试：在tomcat安装目录下面找到startup.bat启动服务（如果闪退肯定是配置错误，重新配置）</p>
 <h2 id="3-tomcat-ecplise配置"><a href="#3-tomcat-ecplise配置" class="headerlink" title="3.tomcat+ecplise配置"></a>3.tomcat+ecplise配置</h2><p>在ecplise- window-preferences-找到server下面的runtime environment-（把ecplise自己带的tomcat删掉）点击Add添加我们自己安装的tomcat版本选择自己的版本，点击next 选择我们tomcat的安装路径。下面选择jre，点击OK就行了。</p>
+<p>有的时候需要安装两个tomcat，接下来我们看看怎么配置第二个tomcat：</p>
+<h3 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h3><ul>
+<li><p>第一个tomcat成功安装之后，第二个就非常简单了，找到你安装的tomcat复制一份（注意是从根目录开始复制一份），然后接的改名字奥！</p>
+<p>例如：第一个：D:\HGDE\tomcat\tomcat7-bos      第二个：D:\HGDE\tomcat2\tomcat2-yhya</p>
+</li>
+<li><p>修改conf/server.xml文：（也可以在ecplise里面修改这个文件）  </p>
+<p> <server port="8006" shutdown="SHUTDOWN">把端口改为没有是使用的端口(原始8005)。 </server></p>
+</li>
+<li><p>&lt;Connector port=”8081” maxHttpHeaderSize=”8192” </p>
+<p>maxThreads=”150” minSpareThreads=”25” maxSpareThreads=”75” </p>
+<p>enableLookups=”false” redirectPort=”8443” acceptCount=”100” </p>
+<p>connectionTimeout=”20000” disableUploadTimeout=”true” /&gt; 把端口改为没有是使用的端口(原始8080)。 </p>
+</li>
+<li><p>&lt;Connector port=”8010” </p>
+<p>enableLookups=”false” redirectPort=”8443” protocol=”AJP/1.3” /&gt; 把端口改为没有是使用的端口(原始8009)。</p>
+<p>③就是提醒一下，经过①②步骤后就不用在修改其他的了。</p>
+</li>
+</ul>
+<h3 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h3><p>①找到windown-prefenerces-server-runtime enviroments-点击右侧add按钮，选择自己安装的tomcat版本，点击next ，选择我们tomcat的安装路径（D:\HGDE\tomcat\tomcat7-bos），下面的jre选项，选择JDK那一项，不选择默认的，通常是第二项。点击finish即可。</p>
+<p>②安装第二个tomcat。</p>
+<p>1）找到ecplise窗口下面的Servers（点击空白），右键点击new-server。</p>
+<p><img src="http://oqhkn28th.bkt.clouddn.com/8LVDQUFUDHD5K_XA039%28ICB.png" alt=""></p>
+<p>2）选择版本，修改server name ，点击finih即可。</p>
+<p><img src="http://oqhkn28th.bkt.clouddn.com/22YW6W34%7DKP_3%7BMB8%253EU%5DB.png" alt=""></p>
+<p>3）在Servers里面找到刚才新建的server1，双击服务server1</p>
+<p><img src="http://oqhkn28th.bkt.clouddn.com/S%5B7K2RI%7B%5BJHR7@5%7B%5DU%5D%28W6Y.png" alt=""></p>
+<p>4）找到Server Locations ，下面选择第三项，并选择我们第二个tomcat的路径。</p>
+<p><img src="http://oqhkn28th.bkt.clouddn.com/ODXUZJB367$@_0~I%5DU%25IG%286.png" alt=""></p>
+<p>5）把需要的项目添加进去即可，左键服务，选择Add andRemove 添加进去即可。</p>
+<h3 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a>第三步：</h3><p>启动服务运行程序，一定注意这里的端口号，因为两个服务不能同时用一个端口号，前面我们已经修改过了，这里不要忘记了，楼主就是忘记了，才报404错误！切记奥~~~~</p>
+<p><a href="http://localhost:8081/yhya-consumer" target="_blank" rel="external">http://localhost:8081/yhya-consumer</a></p>
+<p><a href="http://localhost:8080/yhya-privoder" target="_blank" rel="external">http://localhost:8080/yhya-privoder</a></p>
 
       
     </div>
@@ -662,7 +698,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JDK配置"><span class="nav-number">1.</span> <span class="nav-text">1.JDK配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置Tomcat"><span class="nav-number">2.</span> <span class="nav-text">2.配置Tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-tomcat-ecplise配置"><span class="nav-number">3.</span> <span class="nav-text">3.tomcat+ecplise配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JDK配置"><span class="nav-number">1.</span> <span class="nav-text">1.JDK配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置Tomcat"><span class="nav-number">2.</span> <span class="nav-text">2.配置Tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-tomcat-ecplise配置"><span class="nav-number">3.</span> <span class="nav-text">3.tomcat+ecplise配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步："><span class="nav-number">3.1.</span> <span class="nav-text">第一步：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步："><span class="nav-number">3.2.</span> <span class="nav-text">第二步：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步："><span class="nav-number">3.3.</span> <span class="nav-text">第三步：</span></a></li></ol></li></ol></div>
             
 
           </div>
