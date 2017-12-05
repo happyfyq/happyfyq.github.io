@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="leanCloud," />
+  <meta name="keywords" content="Xpath XML," />
 
 
 
@@ -90,24 +90,17 @@
 
 
 
-<meta name="description" content="前言 真的是要烦死了，还要搞自己的博客，还要完成公司分配的任务，在搭建博客的道路上真的是坎坷呀，就单单说这个文章阅读数和站点访问量，就把我搞的头昏眼花的， 网上的教程真的是鱼龙混杂呀，什么样的都有，都混淆了。现在我搞定了，我就写一个比较全面而且精准的设置方法。供大家参考，希望可以给你们带来方便，不会像我这么痛苦了。 添加站点访问量&amp;lt;一&amp;gt;添加不蒜子脚本   打开主题themes\next">
-<meta name="keywords" content="leanCloud">
+<meta name="description" content="前言：基于之前的一篇利用Digester解析XMl格式的文章（http://happywayq.com/Digester%E8%A7%A3%E6%9E%90XML/）我们请求之后得到的xml格式都是正常的，然而这次请求的到里面有一部分是转义之后的内容。现在我们需要解析的话，就需要把这部分转义的转回正常状态，才开始解析！ 1.准备工作导入包：dom4j-1.6.1.jar  如果是maven工程的话">
+<meta name="keywords" content="Xpath XML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo之NexT主题优化（4）-添加文章访问数和站点访问数">
-<meta property="og:url" content="http://happywayq.com/Hexo的NexT主题优化-添加文章访问数和站点访问数/index.html">
+<meta property="og:title" content="Xpath解析解析出XML的一部分">
+<meta property="og:url" content="http://happywayq.com/Xpath解析解析出XML的一部分/index.html">
 <meta property="og:site_name" content="叫我DaMiss">
-<meta property="og:description" content="前言 真的是要烦死了，还要搞自己的博客，还要完成公司分配的任务，在搭建博客的道路上真的是坎坷呀，就单单说这个文章阅读数和站点访问量，就把我搞的头昏眼花的， 网上的教程真的是鱼龙混杂呀，什么样的都有，都混淆了。现在我搞定了，我就写一个比较全面而且精准的设置方法。供大家参考，希望可以给你们带来方便，不会像我这么痛苦了。 添加站点访问量&amp;lt;一&amp;gt;添加不蒜子脚本   打开主题themes\next">
-<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/lc1.png">
-<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/lc2.png">
-<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/lc4.png">
-<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/lc5.png">
-<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/xg1.png">
-<meta property="og:image" content="http://oqhkn28th.bkt.clouddn.com/xg2.png">
-<meta property="og:updated_time" content="2017-05-27T03:30:48.539Z">
+<meta property="og:description" content="前言：基于之前的一篇利用Digester解析XMl格式的文章（http://happywayq.com/Digester%E8%A7%A3%E6%9E%90XML/）我们请求之后得到的xml格式都是正常的，然而这次请求的到里面有一部分是转义之后的内容。现在我们需要解析的话，就需要把这部分转义的转回正常状态，才开始解析！ 1.准备工作导入包：dom4j-1.6.1.jar  如果是maven工程的话">
+<meta property="og:updated_time" content="2017-12-05T02:32:52.119Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo之NexT主题优化（4）-添加文章访问数和站点访问数">
-<meta name="twitter:description" content="前言 真的是要烦死了，还要搞自己的博客，还要完成公司分配的任务，在搭建博客的道路上真的是坎坷呀，就单单说这个文章阅读数和站点访问量，就把我搞的头昏眼花的， 网上的教程真的是鱼龙混杂呀，什么样的都有，都混淆了。现在我搞定了，我就写一个比较全面而且精准的设置方法。供大家参考，希望可以给你们带来方便，不会像我这么痛苦了。 添加站点访问量&amp;lt;一&amp;gt;添加不蒜子脚本   打开主题themes\next">
-<meta name="twitter:image" content="http://oqhkn28th.bkt.clouddn.com/lc1.png">
+<meta name="twitter:title" content="Xpath解析解析出XML的一部分">
+<meta name="twitter:description" content="前言：基于之前的一篇利用Digester解析XMl格式的文章（http://happywayq.com/Digester%E8%A7%A3%E6%9E%90XML/）我们请求之后得到的xml格式都是正常的，然而这次请求的到里面有一部分是转义之后的内容。现在我们需要解析的话，就需要把这部分转义的转回正常状态，才开始解析！ 1.准备工作导入包：dom4j-1.6.1.jar  如果是maven工程的话">
 
 
 
@@ -135,12 +128,12 @@
 
 
 
-  <link rel="canonical" href="http://happywayq.com/Hexo的NexT主题优化-添加文章访问数和站点访问数/"/>
+  <link rel="canonical" href="http://happywayq.com/Xpath解析解析出XML的一部分/"/>
 
 
 
 
-  <title>Hexo之NexT主题优化（4）-添加文章访问数和站点访问数 | 叫我DaMiss</title>
+  <title>Xpath解析解析出XML的一部分 | 叫我DaMiss</title>
 </head>
 
 
@@ -283,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://happywayq.com/Hexo的NexT主题优化-添加文章访问数和站点访问数/">
+    <link itemprop="mainEntityOfPage" href="http://happywayq.com/Xpath解析解析出XML的一部分/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="happyfyq">
@@ -300,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo之NexT主题优化（4）-添加文章访问数和站点访问数</h1>
+          <h1 class="post-title" itemprop="name headline">Xpath解析解析出XML的一部分</h1>
         
 
         <div class="post-meta">
@@ -312,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T15:28:00+08:00">
-                2017-05-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T09:29:52+08:00">
+                2017-12-05
               </time>
             
 
@@ -323,29 +316,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-			  
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
-                    <span itemprop="name">搭建博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -354,7 +324,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/Hexo的NexT主题优化-添加文章访问数和站点访问数/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/Xpath解析解析出XML的一部分/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -363,7 +333,7 @@
 
           
           
-             <span id="/Hexo的NexT主题优化-添加文章访问数和站点访问数/" class="leancloud_visitors" data-flag-title="Hexo之NexT主题优化（4）-添加文章访问数和站点访问数">
+             <span id="/Xpath解析解析出XML的一部分/" class="leancloud_visitors" data-flag-title="Xpath解析解析出XML的一部分">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,40 +361,17 @@
       
 
       
-        <p><em>前言</em></p>
-<p>真的是要烦死了，还要搞自己的博客，还要完成公司分配的任务，在搭建博客的道路上真的是坎坷呀，就单单说这个文章阅读数和站点访问量，就把我搞的头昏眼花的， 网上的教程真的是鱼龙混杂呀，什么样的都有，都混淆了。现在我搞定了，我就写一个比较全面而且精准的设置方法。供大家参考，希望可以给你们带来方便，不会像我这么痛苦了。</p>
-<h2 id="添加站点访问量"><a href="#添加站点访问量" class="headerlink" title="添加站点访问量"></a>添加站点访问量</h2><p>&lt;一&gt;添加不蒜子脚本  </p>
-<p>打开主题themes\next\layout_partials下面的footer.swig文件，在最开头的位置添加如下demo：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>&lt;二&gt;添加标签</p>
-<p>要显示站点总访问量，复制以下代码添加到你需要显示的位置。有两种算法可选：</p>
-<p>1.算法a：pv的方式，单个用户连续点击n篇文章，记录n次访问量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;</div><div class="line">    本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次</div><div class="line">&lt;/span&gt;</div></pre></td></tr></table></figure>
-<p>2.算法b：uv的方式，单个用户连续点击n篇文章，只记录1次访客数。(DaMiss使用的方式)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;</div><div class="line">  本站总访问量&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;次</div><div class="line">&lt;/span&gt;</div></pre></td></tr></table></figure>
-<p>如果你使用的是Hexo的NexT主题话，打开主题themes\next\layout_partials下面的footer.swig文件，添加上面的任意一种方式即可。</p>
-<p>也就是说，添加网站访问量最终的方法就是在themes\next\layout_partials下面的footer.swig文件，添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;</div><div class="line">  本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人次</div><div class="line">&lt;/span&gt;</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="添加文章阅读量"><a href="#添加文章阅读量" class="headerlink" title="添加文章阅读量"></a>添加文章阅读量</h2><p><strong>NexT主题目前已经合并这个Feature，因此如果你使用的是NexT主题，可以直接使用不用修改主题模版而直接在_config.yml中配置即可</strong></p>
-<h3 id="申请leanCloud账号"><a href="#申请leanCloud账号" class="headerlink" title="申请leanCloud账号"></a>申请leanCloud账号</h3><p>进入leanCloud官网（<a href="https://leancloud.cn/），申请一个账号" target="_blank" rel="external">https://leancloud.cn/），申请一个账号</a></p>
-<p>申请账号之后：创建一个新应用</p>
-<p><img src="http://oqhkn28th.bkt.clouddn.com/lc1.png" alt=""></p>
-<p>然后点击应用名称链接:</p>
-<p><img src="http://oqhkn28th.bkt.clouddn.com/lc2.png" alt=""></p>
-<p>创建一个新的class：</p>
-<p><img src="http://oqhkn28th.bkt.clouddn.com/lc4.png" alt=""></p>
-<ul>
-<li>由于LeanCloud升级了默认的ACL权限，如果你想避免后续因为权限的问题导致次数统计显示不正常，建议在此处选择<code>无限制</code>。</li>
-</ul>
-<p>然后在你创建的应用下面找到左侧的设置复制AppID 和AppKey：</p>
-<p><img src="http://oqhkn28th.bkt.clouddn.com/lc5.png" alt=""></p>
-<h3 id="修改Next主题下面的配置文件-config-yml"><a href="#修改Next主题下面的配置文件-config-yml" class="headerlink" title="修改Next主题下面的配置文件_config.yml"></a>修改Next主题下面的配置文件_config.yml</h3><p>在相应的位置填入一下内容，没有的话就新增</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">leancloud_visitors: </div><div class="line">  enable: true</div><div class="line">  app_id: 刚才复制的id</div><div class="line">  app_key: 刚才复制的key</div></pre></td></tr></table></figure>
-<h2 id="最终的展示效果"><a href="#最终的展示效果" class="headerlink" title="最终的展示效果"></a>最终的展示效果</h2><h4 id="站点访问量"><a href="#站点访问量" class="headerlink" title="站点访问量"></a>站点访问量</h4><p><img src="http://oqhkn28th.bkt.clouddn.com/xg1.png" alt=""></p>
-<h4 id="文章阅读数量"><a href="#文章阅读数量" class="headerlink" title="文章阅读数量"></a>文章阅读数量</h4><p><img src="http://oqhkn28th.bkt.clouddn.com/xg2.png" alt=""></p>
-<p><strong>OK，大功告成，是不是很简单明了，如你还有疑问，请在评论处留言</strong></p>
-
+        <p><em>前言</em>：基于之前的一篇利用Digester解析XMl格式的文章（<a href="http://happywayq.com/Digester%E8%A7%A3%E6%9E%90XML/）我们请求之后得到的xml格式都是正常的，然而这次请求的到里面有一部分是转义之后的内容。现在我们需要解析的话，就需要把这部分转义的转回正常状态，才开始解析！">http://happywayq.com/Digester%E8%A7%A3%E6%9E%90XML/）我们请求之后得到的xml格式都是正常的，然而这次请求的到里面有一部分是转义之后的内容。现在我们需要解析的话，就需要把这部分转义的转回正常状态，才开始解析！</a></p>
+<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><p>导入包：dom4j-1.6.1.jar </p>
+<p>如果是maven工程的话，在pom里面添加如下依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>dom4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>dom4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="2-假设3："><a href="#2-假设3：" class="headerlink" title="2.假设3："></a>2.假设3：</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">soap:Envelope</span> <span class="attr">xmlns:soap</span>=<span class="string">"http://schemas.xmlsoap.org/soap/envelope/"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">soap:Body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ns1:queryResourceAbilityResponse</span> <span class="attr">xmlns:ns1</span>=<span class="string">"http://impl.service.baozhang112.intf.telement.com/"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">ns1:return</span>&gt;</span></div><div class="line">     &amp;lt;responsedata&amp;gt;</div><div class="line">   &amp;lt;errorCode&amp;gt;0&amp;lt;/errorCode&amp;gt;</div><div class="line">   &amp;lt;errorMessage&amp;gt;&amp;lt;/errorMessage&amp;gt;</div><div class="line">   &amp;lt;resultSet class=&amp;quot;java.util.ArrayList&amp;quot;&amp;gt;</div><div class="line">      &amp;lt;result&amp;gt;</div><div class="line">         &amp;lt;is_maxspeed&amp;gt;100M&amp;lt;/is_maxspeed&amp;gt;</div><div class="line">      &amp;lt;/result&amp;gt;</div><div class="line">   &amp;lt;/resultSet&amp;gt;</div><div class="line">&amp;lt;/responsedata&amp;gt;</div><div class="line">    <span class="tag">&lt;/<span class="name">ns1:return</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ns1:queryResourceAbilityResponse</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">soap:Body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">soap:Envelope</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>我们接下来就要把中间转义的部分转成正常的xml格式，然后才进行解析</p>
+<h2 id="3-开始解析"><a href="#3-开始解析" class="headerlink" title="3.开始解析"></a>3.开始解析</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">String Str= <span class="string">"&lt;soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"&gt;"</span></div><div class="line">               +<span class="string">"&lt;soap:Body&gt;"</span></div><div class="line">               +<span class="string">"&lt;ns1:queryResourceAbilityResponse xmlns:ns1=\"http://impl.service.baozhang112.intf.telement.com/\"&gt;"</span></div><div class="line">               +<span class="string">"&lt;ns1:return&gt;"</span></div><div class="line">               +<span class="string">"&amp;lt;responsedata&amp;gt;"</span></div><div class="line">               +<span class="string">"&amp;lt;errorCode&amp;gt;"</span>+<span class="number">0</span>+<span class="string">"&amp;lt;/errorCode&amp;gt;"</span></div><div class="line">               +<span class="string">"&amp;lt;errorMessage&amp;gt;"</span>+<span class="number">1</span>+<span class="string">"&amp;lt;/errorMessage&amp;gt;"</span></div><div class="line">               +<span class="string">"&amp;lt;resultSet class=&amp;quot;java.util.ArrayList&amp;quot;&amp;gt;"</span></div><div class="line">               +<span class="string">"&amp;lt;result&amp;gt;"</span></div><div class="line">               +<span class="string">"&amp;lt;is_maxspeed&amp;gt;"</span>+is_maxspeed+<span class="string">"&amp;lt;/is_maxspeed&amp;gt;"</span></div><div class="line">               +<span class="string">"&amp;lt;/result&amp;gt;"</span></div><div class="line">               +<span class="string">"&amp;lt;/resultSet&amp;gt;"</span></div><div class="line">               +<span class="string">"&amp;lt;/responsedata&amp;gt;"</span></div><div class="line">               +<span class="string">"&lt;/ns1:return&gt;"</span></div><div class="line">               +<span class="string">"&lt;/ns1:queryResourceAbilityResponse&gt;"</span></div><div class="line">             + <span class="string">"&lt;/soap:Body&gt;"</span></div><div class="line">            +<span class="string">" &lt;/soap:Envelope&gt;"</span>;</div><div class="line"></div><div class="line">       String responsedataXml = <span class="string">""</span>;</div><div class="line">       <span class="keyword">try</span> &#123;  </div><div class="line">           <span class="comment">//将这个文档转成dom树，这样他就有自己的节点了</span></div><div class="line">        org.dom4j.Document ment = DocumentHelper.parseText(Str);</div><div class="line">           <span class="comment">//找到这个结点，如果有多个，得到的是一个list</span></div><div class="line">        DefaultXPath xpath = <span class="keyword">new</span> DefaultXPath(<span class="string">"//ns1:return"</span>);<span class="comment">//不管这个节点在什么位置。直接找到 //的作用</span></div><div class="line">           <span class="comment">//给这个得到的节点内容添加命名空间。命名空间是从得到文件中找，都是自己定义的。一个xml文档肯定有自己的命名空间</span></div><div class="line">        xpath.setNamespaceURIs(Collections.singletonMap(<span class="string">"ns1"</span>, <span class="string">"http://impl.service.baozhang112.intf.telement.com/"</span>));</div><div class="line">         <span class="comment">//这里如果ns1:return 有多个，那么得到就是多个</span></div><div class="line">        List&lt;Element&gt; selectNodes = xpath.selectNodes(ment);</div><div class="line">        <span class="keyword">for</span> (Element element : selectNodes) &#123;</div><div class="line">            responsedataXml=element.getText();<span class="comment">//得到ns1:return里面的内容</span></div><div class="line">           System.out.println(<span class="string">"responsedataXml="</span>+element.getText());<span class="comment">//输出结果</span></div><div class="line">       &#125;</div><div class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;  </div><div class="line">       &#125;</div></pre></td></tr></table></figure>
+<p>这样就把里面部分的转义文件解析出来了，并且也已经转义好了。</p>
+<p>输出转义之后的结果是：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">responsedataXml=</div><div class="line"><span class="tag">&lt;<span class="name">responsedata</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">errorCode</span>&gt;</span>0<span class="tag">&lt;/<span class="name">errorCode</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">errorMessage</span>&gt;</span>1<span class="tag">&lt;/<span class="name">errorMessage</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">resultSet</span> <span class="attr">class</span>=<span class="string">"java.util.ArrayList"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">result</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">is_maxspeed</span>&gt;</span>100M<span class="tag">&lt;/<span class="name">is_maxspeed</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">result</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">resultSet</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">responsedata</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="4-我们再把我们转义之后的拼接进去本来的XMl文件里面，再进行我们接下来的解析。"><a href="#4-我们再把我们转义之后的拼接进去本来的XMl文件里面，再进行我们接下来的解析。" class="headerlink" title="4.我们再把我们转义之后的拼接进去本来的XMl文件里面，再进行我们接下来的解析。"></a>4.我们再把我们转义之后的拼接进去本来的XMl文件里面，再进行我们接下来的解析。</h2>
       
     </div>
 
@@ -475,7 +422,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/leanCloud/" rel="tag"># leanCloud</a>
+            <a href="/tags/Xpath-XML/" rel="tag"># Xpath XML</a>
           
         </div>
       
@@ -488,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Hexo之NexT主题优化-添加分享/" rel="next" title="Hexo之NexT主题优化（3）-添加分享">
-                <i class="fa fa-chevron-left"></i> Hexo之NexT主题优化（3）-添加分享
+              <a href="/SpringBoot中使用Swagger/" rel="next" title="SpringBoot中使用Swagger">
+                <i class="fa fa-chevron-left"></i> SpringBoot中使用Swagger
               </a>
             
           </div>
@@ -497,10 +444,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/WebService之CXF开发/" rel="prev" title="WebService之CXF开发">
-                WebService之CXF开发 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -704,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加站点访问量"><span class="nav-number">1.</span> <span class="nav-text">添加站点访问量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加文章阅读量"><span class="nav-number">2.</span> <span class="nav-text">添加文章阅读量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#申请leanCloud账号"><span class="nav-number">2.1.</span> <span class="nav-text">申请leanCloud账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Next主题下面的配置文件-config-yml"><span class="nav-number">2.2.</span> <span class="nav-text">修改Next主题下面的配置文件_config.yml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终的展示效果"><span class="nav-number">3.</span> <span class="nav-text">最终的展示效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#站点访问量"><span class="nav-number">3.0.1.</span> <span class="nav-text">站点访问量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文章阅读数量"><span class="nav-number">3.0.2.</span> <span class="nav-text">文章阅读数量</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-准备工作"><span class="nav-number">1.</span> <span class="nav-text">1.准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-假设3："><span class="nav-number">2.</span> <span class="nav-text">2.假设3：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-开始解析"><span class="nav-number">3.</span> <span class="nav-text">3.开始解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-我们再把我们转义之后的拼接进去本来的XMl文件里面，再进行我们接下来的解析。"><span class="nav-number">4.</span> <span class="nav-text">4.我们再把我们转义之后的拼接进去本来的XMl文件里面，再进行我们接下来的解析。</span></a></li></ol></div>
             
 
           </div>
